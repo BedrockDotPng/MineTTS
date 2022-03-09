@@ -46,6 +46,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 
 import co.nickxwlm.minetts.gui.GuiSamTrade;
+import co.nickxwlm.minetts.gui.GuiOS;
 import co.nickxwlm.minetts.gui.GuiEasterEgg;
 import co.nickxwlm.minetts.gui.GuiDiskDriveslot;
 
@@ -146,6 +147,8 @@ public class ElementsMinettsMod implements IFuelHandler, IWorldGenerator {
 				return new GuiDiskDriveslot.GuiContainerMod(world, x, y, z, player);
 			if (id == GuiSamTrade.GUIID)
 				return new GuiSamTrade.GuiContainerMod(world, x, y, z, player);
+			if (id == GuiOS.GUIID)
+				return new GuiOS.GuiContainerMod(world, x, y, z, player);
 			return null;
 		}
 
@@ -157,6 +160,8 @@ public class ElementsMinettsMod implements IFuelHandler, IWorldGenerator {
 				return new GuiDiskDriveslot.GuiWindow(world, x, y, z, player);
 			if (id == GuiSamTrade.GUIID)
 				return new GuiSamTrade.GuiWindow(world, x, y, z, player);
+			if (id == GuiOS.GUIID)
+				return new GuiOS.GuiWindow(world, x, y, z, player);
 			return null;
 		}
 	}

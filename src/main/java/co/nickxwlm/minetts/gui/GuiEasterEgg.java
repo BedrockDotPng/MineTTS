@@ -13,6 +13,8 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.IInventory;
@@ -28,6 +30,7 @@ import java.util.HashMap;
 
 import java.io.IOException;
 
+import co.nickxwlm.minetts.procedure.ProcedureCheckParts;
 import co.nickxwlm.minetts.MinettsMod;
 import co.nickxwlm.minetts.ElementsMinettsMod;
 
@@ -56,7 +59,21 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 			this.x = x;
 			this.y = y;
 			this.z = z;
-			this.internal = new InventoryBasic("", true, 0);
+			this.internal = new InventoryBasic("", true, 2);
+			TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
+			if (ent instanceof IInventory)
+				this.internal = (IInventory) ent;
+			this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 25, 60) {
+			}));
+			this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 168, 60) {
+			}));
+			int si;
+			int sj;
+			for (si = 0; si < 3; ++si)
+				for (sj = 0; sj < 9; ++sj)
+					this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 18 + 8 + sj * 18, 0 + 84 + si * 18));
+			for (si = 0; si < 9; ++si)
+				this.addSlotToContainer(new Slot(player.inventory, si, 18 + 8 + si * 18, 0 + 142));
 		}
 
 		public Map<Integer, Slot> get() {
@@ -66,6 +83,121 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 		@Override
 		public boolean canInteractWith(EntityPlayer player) {
 			return internal.isUsableByPlayer(player);
+		}
+
+		@Override
+		public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
+			ItemStack itemstack = ItemStack.EMPTY;
+			Slot slot = (Slot) this.inventorySlots.get(index);
+			if (slot != null && slot.getHasStack()) {
+				ItemStack itemstack1 = slot.getStack();
+				itemstack = itemstack1.copy();
+				if (index < 2) {
+					if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
+						return ItemStack.EMPTY;
+					}
+					slot.onSlotChange(itemstack1, itemstack);
+				} else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
+					if (index < 2 + 27) {
+						if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
+							return ItemStack.EMPTY;
+						}
+					} else {
+						if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
+							return ItemStack.EMPTY;
+						}
+					}
+					return ItemStack.EMPTY;
+				}
+				if (itemstack1.getCount() == 0) {
+					slot.putStack(ItemStack.EMPTY);
+				} else {
+					slot.onSlotChanged();
+				}
+				if (itemstack1.getCount() == itemstack.getCount()) {
+					return ItemStack.EMPTY;
+				}
+				slot.onTake(playerIn, itemstack1);
+			}
+			return itemstack;
+		}
+
+		@Override
+		protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
+			boolean flag = false;
+			int i = startIndex;
+			if (reverseDirection) {
+				i = endIndex - 1;
+			}
+			if (stack.isStackable()) {
+				while (!stack.isEmpty()) {
+					if (reverseDirection) {
+						if (i < startIndex) {
+							break;
+						}
+					} else if (i >= endIndex) {
+						break;
+					}
+					Slot slot = this.inventorySlots.get(i);
+					ItemStack itemstack = slot.getStack();
+					if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
+							&& (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
+							&& ItemStack.areItemStackTagsEqual(stack, itemstack)) {
+						int j = itemstack.getCount() + stack.getCount();
+						int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
+						if (j <= maxSize) {
+							stack.setCount(0);
+							itemstack.setCount(j);
+							slot.putStack(itemstack);
+							flag = true;
+						} else if (itemstack.getCount() < maxSize) {
+							stack.shrink(maxSize - itemstack.getCount());
+							itemstack.setCount(maxSize);
+							slot.putStack(itemstack);
+							flag = true;
+						}
+					}
+					if (reverseDirection) {
+						--i;
+					} else {
+						++i;
+					}
+				}
+			}
+			if (!stack.isEmpty()) {
+				if (reverseDirection) {
+					i = endIndex - 1;
+				} else {
+					i = startIndex;
+				}
+				while (true) {
+					if (reverseDirection) {
+						if (i < startIndex) {
+							break;
+						}
+					} else if (i >= endIndex) {
+						break;
+					}
+					Slot slot1 = this.inventorySlots.get(i);
+					ItemStack itemstack1 = slot1.getStack();
+					if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
+						if (stack.getCount() > slot1.getSlotStackLimit()) {
+							slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
+						} else {
+							slot1.putStack(stack.splitStack(stack.getCount()));
+						}
+						slot1.onSlotChanged();
+						flag = true;
+						break;
+					}
+					if (reverseDirection) {
+						--i;
+					} else {
+						++i;
+					}
+				}
+			}
+			return flag;
 		}
 
 		@Override
@@ -95,8 +227,8 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 			this.y = y;
 			this.z = z;
 			this.entity = entity;
-			this.xSize = 115;
-			this.ySize = 102;
+			this.xSize = 212;
+			this.ySize = 166;
 		}
 		private static final ResourceLocation texture = new ResourceLocation("minetts:textures/easter_egg.png");
 		@Override
@@ -115,7 +247,7 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 			this.drawModalRectWithCustomSizedTexture(k, l, 0, 0, this.xSize, this.ySize, this.xSize, this.ySize);
 			zLevel = 100.0F;
 			this.mc.renderEngine.bindTexture(new ResourceLocation("minetts:textures/errror.png"));
-			this.drawModalRectWithCustomSizedTexture(this.guiLeft + 17, this.guiTop + 18, 0, 0, 16, 16, 16, 16);
+			this.drawModalRectWithCustomSizedTexture(this.guiLeft + 4, this.guiTop + 13, 0, 0, 16, 16, 16, 16);
 		}
 
 		@Override
@@ -135,7 +267,11 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-			this.fontRenderer.drawString("Label text", 40, 21, -12829636);
+			this.fontRenderer.drawString("Computer Parts aren't detected.", 25, 7, -12829636);
+			this.fontRenderer.drawString(" Please insert them and press \"Retry\"", 21, 17, -12829636);
+			this.fontRenderer.drawString("CPU", 25, 47, -12829636);
+			this.fontRenderer.drawString("RAM", 168, 47, -12829636);
+			this.fontRenderer.drawString(" button.", 21, 27, -12829636);
 		}
 
 		@Override
@@ -147,11 +283,11 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 		@Override
 		public void initGui() {
 			super.initGui();
-			this.guiLeft = (this.width - 115) / 2;
-			this.guiTop = (this.height - 102) / 2;
+			this.guiLeft = (this.width - 212) / 2;
+			this.guiTop = (this.height - 166) / 2;
 			Keyboard.enableRepeatEvents(true);
 			this.buttonList.clear();
-			this.buttonList.add(new GuiButton(0, this.guiLeft + 2, this.guiTop + 57, 110, 20, "Template"));
+			this.buttonList.add(new GuiButton(0, this.guiLeft + 51, this.guiTop + 57, 110, 20, "Retry"));
 		}
 
 		@Override
@@ -266,6 +402,17 @@ public class GuiEasterEgg extends ElementsMinettsMod.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ProcedureCheckParts.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(EntityPlayer entity, int slotID, int changeType, int meta, int x, int y, int z) {

@@ -2,9 +2,9 @@
   "_fv": 18,
   "_type": "gui",
   "definition": {
-    "type": 0,
-    "width": 115,
-    "height": 102,
+    "type": 1,
+    "width": 212,
+    "height": 166,
     "inventoryOffsetX": 0,
     "inventoryOffsetY": 0,
     "renderBgLayer": true,
@@ -13,25 +13,28 @@
       {
         "type": "button",
         "data": {
-          "text": "Template",
+          "text": "Retry",
+          "onClick": {
+            "name": "CheckParts"
+          },
           "width": 110,
           "height": 20,
-          "name": "Template",
-          "x": 158,
-          "y": 126
+          "name": "Retry",
+          "x": 159,
+          "y": 94
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Label text",
+          "text": "Computer Parts aren't detected.",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Label text",
-          "x": 196,
-          "y": 90
+          "name": "Computer Parts aren't detected.",
+          "x": 133,
+          "y": 44
         }
       },
       {
@@ -40,8 +43,88 @@
           "image": "errror.png",
           "use1Xscale": false,
           "name": "errror.png",
-          "x": 173,
-          "y": 87
+          "x": 112,
+          "y": 50
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": " Please insert them and press \"Retry\"",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": " Please insert them and press \"Retry\"",
+          "x": 129,
+          "y": 54
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 0,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #0",
+          "x": 132,
+          "y": 96
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "CPU",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "CPU",
+          "x": 133,
+          "y": 84
+        }
+      },
+      {
+        "type": "inputslot",
+        "data": {
+          "inputLimit": {
+            "value": ""
+          },
+          "id": 1,
+          "disableStackInteraction": false,
+          "dropItemsWhenNotBound": true,
+          "name": "Slot #1",
+          "x": 275,
+          "y": 96
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "RAM",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "RAM",
+          "x": 276,
+          "y": 84
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": " button.",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": " button.",
+          "x": 129,
+          "y": 64
         }
       }
     ]

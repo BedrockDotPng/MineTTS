@@ -25,8 +25,8 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "While it doesn't have the purpose",
-      "it could be used for displaying in an item frame! Woohoo!"
+      "Now it can be used for using it for a computer",
+      "besides just displaying in an item frame! Woohoo!"
     ],
     "hasGlow": false,
     "guiBoundTo": "<NONE>",

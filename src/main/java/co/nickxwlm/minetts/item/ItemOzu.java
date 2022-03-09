@@ -64,8 +64,7 @@ public class ItemOzu extends ElementsMinettsMod.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add("It's a defective 64MB DDR-SDRAM plate of RAM. Also can be used in decorative purposes");
-			list.add("just like i586.");
+			list.add("It's a 64MB DDR-SDRAM plate of RAM. Just enough for a \"circa-1999\" TTS OS to work properly!");
 		}
 	}
 }

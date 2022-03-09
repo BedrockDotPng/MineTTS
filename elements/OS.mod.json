@@ -1,0 +1,88 @@
+{
+  "_fv": 18,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 196,
+    "height": 166,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": true,
+    "doesPauseGame": true,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Hello User!",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "Hello User!",
+          "x": 132,
+          "y": 44
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "TTS-OS v0.0.01a (WIP)",
+          "color": {
+            "value": -12829636,
+            "falpha": 0.0
+          },
+          "name": "TTS-OS v0.0.01a (WIP)",
+          "x": 202,
+          "y": 188
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Shutdown",
+          "onClick": {
+            "name": "OSshutdown"
+          },
+          "width": 65,
+          "height": 20,
+          "name": "Shutdown",
+          "x": 231,
+          "y": 87
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Order Taco",
+          "width": 75,
+          "height": 20,
+          "name": "Order Taco",
+          "x": 129,
+          "y": 87
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Games",
+          "width": 50,
+          "height": 20,
+          "name": "Games",
+          "x": 246,
+          "y": 62
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "File Manager",
+          "width": 85,
+          "height": 20,
+          "name": "File Manager",
+          "x": 129,
+          "y": 62
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minetts:blocks/stonessides",
+    "up": "minetts:blocks/stonessides",
+    "north": "minetts:blocks/monitorside",
+    "east": "minetts:blocks/stonessides",
+    "south": "minetts:blocks/stonessides",
+    "west": "minetts:blocks/stonessides",
+    "particle": "minetts:blocks/stonessides"
+  }
+}

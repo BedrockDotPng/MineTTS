@@ -13,8 +13,6 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.world.World;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.item.ItemStack;
 import net.minecraft.inventory.Slot;
 import net.minecraft.inventory.InventoryBasic;
 import net.minecraft.inventory.IInventory;
@@ -30,16 +28,16 @@ import java.util.HashMap;
 
 import java.io.IOException;
 
-import co.nickxwlm.minetts.procedure.ProcedureTacoChecker;
+import co.nickxwlm.minetts.procedure.ProcedureOSshutdown;
 import co.nickxwlm.minetts.MinettsMod;
 import co.nickxwlm.minetts.ElementsMinettsMod;
 
 @ElementsMinettsMod.ModElement.Tag
-public class GuiSamTrade extends ElementsMinettsMod.ModElement {
-	public static int GUIID = 4;
+public class GuiOS extends ElementsMinettsMod.ModElement {
+	public static int GUIID = 5;
 	public static HashMap guistate = new HashMap();
-	public GuiSamTrade(ElementsMinettsMod instance) {
-		super(instance, 28);
+	public GuiOS(ElementsMinettsMod instance) {
+		super(instance, 48);
 	}
 
 	@Override
@@ -59,25 +57,7 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 			this.x = x;
 			this.y = y;
 			this.z = z;
-			this.internal = new InventoryBasic("", true, 2);
-			TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
-			if (ent instanceof IInventory)
-				this.internal = (IInventory) ent;
-			this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 41, 11) {
-			}));
-			this.customSlots.put(1, this.addSlotToContainer(new Slot(internal, 1, 41, 42) {
-				@Override
-				public boolean isItemValid(ItemStack stack) {
-					return false;
-				}
-			}));
-			int si;
-			int sj;
-			for (si = 0; si < 3; ++si)
-				for (sj = 0; sj < 9; ++sj)
-					this.addSlotToContainer(new Slot(player.inventory, sj + (si + 1) * 9, 0 + 8 + sj * 18, 0 + 84 + si * 18));
-			for (si = 0; si < 9; ++si)
-				this.addSlotToContainer(new Slot(player.inventory, si, 0 + 8 + si * 18, 0 + 142));
+			this.internal = new InventoryBasic("", true, 0);
 		}
 
 		public Map<Integer, Slot> get() {
@@ -87,121 +67,6 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 		@Override
 		public boolean canInteractWith(EntityPlayer player) {
 			return internal.isUsableByPlayer(player);
-		}
-
-		@Override
-		public ItemStack transferStackInSlot(EntityPlayer playerIn, int index) {
-			ItemStack itemstack = ItemStack.EMPTY;
-			Slot slot = (Slot) this.inventorySlots.get(index);
-			if (slot != null && slot.getHasStack()) {
-				ItemStack itemstack1 = slot.getStack();
-				itemstack = itemstack1.copy();
-				if (index < 2) {
-					if (!this.mergeItemStack(itemstack1, 2, this.inventorySlots.size(), true)) {
-						return ItemStack.EMPTY;
-					}
-					slot.onSlotChange(itemstack1, itemstack);
-				} else if (!this.mergeItemStack(itemstack1, 0, 2, false)) {
-					if (index < 2 + 27) {
-						if (!this.mergeItemStack(itemstack1, 2 + 27, this.inventorySlots.size(), true)) {
-							return ItemStack.EMPTY;
-						}
-					} else {
-						if (!this.mergeItemStack(itemstack1, 2, 2 + 27, false)) {
-							return ItemStack.EMPTY;
-						}
-					}
-					return ItemStack.EMPTY;
-				}
-				if (itemstack1.getCount() == 0) {
-					slot.putStack(ItemStack.EMPTY);
-				} else {
-					slot.onSlotChanged();
-				}
-				if (itemstack1.getCount() == itemstack.getCount()) {
-					return ItemStack.EMPTY;
-				}
-				slot.onTake(playerIn, itemstack1);
-			}
-			return itemstack;
-		}
-
-		@Override
-		protected boolean mergeItemStack(ItemStack stack, int startIndex, int endIndex, boolean reverseDirection) {
-			boolean flag = false;
-			int i = startIndex;
-			if (reverseDirection) {
-				i = endIndex - 1;
-			}
-			if (stack.isStackable()) {
-				while (!stack.isEmpty()) {
-					if (reverseDirection) {
-						if (i < startIndex) {
-							break;
-						}
-					} else if (i >= endIndex) {
-						break;
-					}
-					Slot slot = this.inventorySlots.get(i);
-					ItemStack itemstack = slot.getStack();
-					if (slot.isItemValid(itemstack) && !itemstack.isEmpty() && itemstack.getItem() == stack.getItem()
-							&& (!stack.getHasSubtypes() || stack.getMetadata() == itemstack.getMetadata())
-							&& ItemStack.areItemStackTagsEqual(stack, itemstack)) {
-						int j = itemstack.getCount() + stack.getCount();
-						int maxSize = Math.min(slot.getSlotStackLimit(), stack.getMaxStackSize());
-						if (j <= maxSize) {
-							stack.setCount(0);
-							itemstack.setCount(j);
-							slot.putStack(itemstack);
-							flag = true;
-						} else if (itemstack.getCount() < maxSize) {
-							stack.shrink(maxSize - itemstack.getCount());
-							itemstack.setCount(maxSize);
-							slot.putStack(itemstack);
-							flag = true;
-						}
-					}
-					if (reverseDirection) {
-						--i;
-					} else {
-						++i;
-					}
-				}
-			}
-			if (!stack.isEmpty()) {
-				if (reverseDirection) {
-					i = endIndex - 1;
-				} else {
-					i = startIndex;
-				}
-				while (true) {
-					if (reverseDirection) {
-						if (i < startIndex) {
-							break;
-						}
-					} else if (i >= endIndex) {
-						break;
-					}
-					Slot slot1 = this.inventorySlots.get(i);
-					ItemStack itemstack1 = slot1.getStack();
-					if (itemstack1.isEmpty() && slot1.isItemValid(stack)) {
-						if (stack.getCount() > slot1.getSlotStackLimit()) {
-							slot1.putStack(stack.splitStack(slot1.getSlotStackLimit()));
-						} else {
-							slot1.putStack(stack.splitStack(stack.getCount()));
-						}
-						slot1.onSlotChanged();
-						flag = true;
-						break;
-					}
-					if (reverseDirection) {
-						--i;
-					} else {
-						++i;
-					}
-				}
-			}
-			return flag;
 		}
 
 		@Override
@@ -231,10 +96,10 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 			this.y = y;
 			this.z = z;
 			this.entity = entity;
-			this.xSize = 176;
+			this.xSize = 196;
 			this.ySize = 166;
 		}
-		private static final ResourceLocation texture = new ResourceLocation("minetts:textures/sam_trade.png");
+		private static final ResourceLocation texture = new ResourceLocation("minetts:textures/os.png");
 		@Override
 		public void drawScreen(int mouseX, int mouseY, float partialTicks) {
 			this.drawDefaultBackground();
@@ -269,7 +134,8 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-			this.fontRenderer.drawString("v", 47, 29, -12829636);
+			this.fontRenderer.drawString("Hello User!", 16, 7, -12829636);
+			this.fontRenderer.drawString("TTS-OS v0.0.01a (WIP)", 86, 151, -12829636);
 		}
 
 		@Override
@@ -281,11 +147,14 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 		@Override
 		public void initGui() {
 			super.initGui();
-			this.guiLeft = (this.width - 176) / 2;
+			this.guiLeft = (this.width - 196) / 2;
 			this.guiTop = (this.height - 166) / 2;
 			Keyboard.enableRepeatEvents(true);
 			this.buttonList.clear();
-			this.buttonList.add(new GuiButton(0, this.guiLeft + 85, this.guiTop + 26, 70, 20, "Sell Taco"));
+			this.buttonList.add(new GuiButton(0, this.guiLeft + 115, this.guiTop + 50, 65, 20, "Shutdown"));
+			this.buttonList.add(new GuiButton(1, this.guiLeft + 13, this.guiTop + 50, 75, 20, "Order Taco"));
+			this.buttonList.add(new GuiButton(2, this.guiLeft + 130, this.guiTop + 25, 50, 20, "Games"));
+			this.buttonList.add(new GuiButton(3, this.guiLeft + 13, this.guiTop + 25, 85, 20, "File Manager"));
 		}
 
 		@Override
@@ -404,7 +273,7 @@ public class GuiSamTrade extends ElementsMinettsMod.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
-				ProcedureTacoChecker.executeProcedure($_dependencies);
+				ProcedureOSshutdown.executeProcedure($_dependencies);
 			}
 		}
 	}

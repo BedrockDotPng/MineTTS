@@ -1,7 +1,9 @@
 # TTSmod (original Idea by Nick Hammerich).
 ![TTSmod Banner](https://user-images.githubusercontent.com/74654571/156976681-e2d83671-1bdc-407a-a3c9-a443cd4f62fc.png)
 
-This is a mod for Minecraft Java Edition which adds TTS-related stuff such as:
+We're on the 0.1.xx revision milestone! 🥳🥳🥳
+
+Anyway, this is a mod for Minecraft Java Edition which adds TTS-related stuff such as:
 1) Mobs 
 - [X] 1.1) Nickolai
 - [X] 1.2) Sam

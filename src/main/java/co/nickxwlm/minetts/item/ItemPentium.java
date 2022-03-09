@@ -64,8 +64,8 @@ public class ItemPentium extends ElementsMinettsMod.ModElement {
 		@Override
 		public void addInformation(ItemStack itemstack, World world, List<String> list, ITooltipFlag flag) {
 			super.addInformation(itemstack, world, list, flag);
-			list.add("While it doesn't have the purpose");
-			list.add("it could be used for displaying in an item frame! Woohoo!");
+			list.add("Now it can be used for using it for a computer");
+			list.add("besides just displaying in an item frame! Woohoo!");
 		}
 	}
 }

@@ -20,21 +20,35 @@
           "disableStackInteraction": false,
           "dropItemsWhenNotBound": true,
           "name": "Slot #0",
-          "x": 205,
-          "y": 72
+          "x": 150,
+          "y": 73
         }
       },
       {
         "type": "label",
         "data": {
-          "text": "Insert Disk",
+          "text": "Disk Drive Menu",
           "color": {
             "value": -12829636,
             "falpha": 0.0
           },
-          "name": "Insert Disk",
-          "x": 185,
-          "y": 52
+          "name": "Disk Drive Menu",
+          "x": 173,
+          "y": 50
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "text": "Close CD-tray",
+          "onClick": {
+            "name": "CakeChecker"
+          },
+          "width": 90,
+          "height": 20,
+          "name": "Close CD-tray",
+          "x": 178,
+          "y": 71
         }
       }
     ],

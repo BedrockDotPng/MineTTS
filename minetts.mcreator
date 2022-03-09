@@ -1,7 +1,7 @@
 {
   "id_map": {
-    "GUI": 4,
-    "ENTITY": 7
+    "ENTITY": 7,
+    "GUI": 5
   },
   "mod_elements": [
     {
@@ -527,6 +527,109 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "ozu"
+    },
+    {
+      "name": "MonoblockOpen",
+      "type": "procedure",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "monoblock_open",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Monoblock",
+      "type": "block",
+      "sortid": 46,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "monoblock"
+    },
+    {
+      "name": "CheckParts",
+      "type": "procedure",
+      "sortid": 47,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "check_parts",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OSshutdown",
+      "type": "procedure",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "o_sshutdown",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "OS",
+      "type": "gui",
+      "sortid": 48,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 5
+      },
+      "registry_name": "os"
     }
   ],
   "variable_elements": [],
@@ -619,6 +722,7 @@
       "item.shortsboots.name": "Shorts Boots",
       "subtitles.irina-death1": "Ирина погибла",
       "tile.macintoniumblock.name": "Блок макинтония",
+      "tile.monoblock.name": "Компуктер",
       "subtitles.irina-death": "",
       "item.ozu.name": "Плашка SDRAM-DDR на 64МБ",
       "tile.bsodparts.name": "Блок хромакея",
@@ -663,6 +767,7 @@
       "item.shortsboots.name": "Shorts Boots",
       "subtitles.irina-death1": "Irina dies",
       "tile.macintoniumblock.name": "Macintonium Block",
+      "tile.monoblock.name": "Computer",
       "subtitles.irina-death": "",
       "item.ozu.name": "64MB SDRAM-DDR1",
       "tile.bsodparts.name": "Chromakey Block",
@@ -709,7 +814,7 @@
   "workspaceSettings": {
     "modid": "minetts",
     "modName": "TTSmod",
-    "version": "0.0.24a",
+    "version": "0.1.00a",
     "description": "The mod which adds computer, slash, TTS-related stuff into Minecraft!",
     "author": "WinLinuxMan, Nick Hammerich",
     "websiteURL": "https://vk.com/zappin1002 ! https://vk.com/nick_hammerich",

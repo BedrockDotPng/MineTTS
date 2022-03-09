@@ -3,7 +3,7 @@
     "modid": "minetts",
     "name": "TTSmod",
     "description": "The mod which adds computer, slash, TTS-related stuff into Minecraft!",
-    "version": "0.0.24a",
+    "version": "0.1.00a",
     "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "logoFile": "assets/minetts/textures/ttsmod.png",
     "mcversion": "1.12.2",

@@ -30,6 +30,7 @@ import java.util.HashMap;
 
 import java.io.IOException;
 
+import co.nickxwlm.minetts.procedure.ProcedureCakeChecker;
 import co.nickxwlm.minetts.MinettsMod;
 import co.nickxwlm.minetts.ElementsMinettsMod;
 
@@ -62,7 +63,7 @@ public class GuiDiskDriveslot extends ElementsMinettsMod.ModElement {
 			TileEntity ent = world.getTileEntity(new BlockPos(x, y, z));
 			if (ent instanceof IInventory)
 				this.internal = (IInventory) ent;
-			this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 80, 36) {
+			this.customSlots.put(0, this.addSlotToContainer(new Slot(internal, 0, 25, 37) {
 			}));
 			int si;
 			int sj;
@@ -262,7 +263,7 @@ public class GuiDiskDriveslot extends ElementsMinettsMod.ModElement {
 
 		@Override
 		protected void drawGuiContainerForegroundLayer(int par1, int par2) {
-			this.fontRenderer.drawString("Insert Disk", 59, 15, -12829636);
+			this.fontRenderer.drawString("Disk Drive Menu", 47, 13, -12829636);
 		}
 
 		@Override
@@ -278,6 +279,7 @@ public class GuiDiskDriveslot extends ElementsMinettsMod.ModElement {
 			this.guiTop = (this.height - 166) / 2;
 			Keyboard.enableRepeatEvents(true);
 			this.buttonList.clear();
+			this.buttonList.add(new GuiButton(0, this.guiLeft + 52, this.guiTop + 34, 90, 20, "Close CD-tray"));
 		}
 
 		@Override
@@ -392,6 +394,17 @@ public class GuiDiskDriveslot extends ElementsMinettsMod.ModElement {
 		// security measure to prevent arbitrary chunk generation
 		if (!world.isBlockLoaded(new BlockPos(x, y, z)))
 			return;
+		if (buttonID == 0) {
+			{
+				Map<String, Object> $_dependencies = new HashMap<>();
+				$_dependencies.put("entity", entity);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ProcedureCakeChecker.executeProcedure($_dependencies);
+			}
+		}
 	}
 
 	private static void handleSlotAction(EntityPlayer entity, int slotID, int changeType, int meta, int x, int y, int z) {

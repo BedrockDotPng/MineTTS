@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minetts:monoblock"
+    },
+    "facing=north": {
+      "model": "minetts:monoblock"
+    },
+    "facing=east": {
+      "model": "minetts:monoblock",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "minetts:monoblock",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "minetts:monoblock",
+      "y": 270
+    }
+  }
+}
