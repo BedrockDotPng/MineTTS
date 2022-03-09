@@ -5,7 +5,7 @@ This is a mod for Minecraft Java Edition which adds TTS-related stuff such as:
 1) Mobs 
 - [X] 1.1) Nickolai
 - [X] 1.2) Sam
-- [ ] 1.3) Irina.
+- [X] 1.3) Irina.
 
 2) Blocks
 - 2.1) OS blocks:
