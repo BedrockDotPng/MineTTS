@@ -1,16 +1,9 @@
 # TTSmod (original Idea by Nick Hammerich).
 ![TTSmod Banner](https://user-images.githubusercontent.com/74654571/156976681-e2d83671-1bdc-407a-a3c9-a443cd4f62fc.png)
 
-<<<<<<< HEAD
 We're on the 0.1.xx revision milestone! 🥳🥳🥳
 
-Anyway, this is a mod for Minecraft Java Edition which adds TTS-related stuff such as:
-1) Mobs 
-- [X] 1.1) Nickolai
-- [X] 1.2) Sam
-- [X] 1.3) Irina.
-=======
-*As of now, this mod for Minecraft Java Edition adds TTS-related stuff such as:*
+*Anyway, as of now, this mod for Minecraft Java Edition adds TTS-related stuff such as:*
 
 ![image](https://user-images.githubusercontent.com/74654571/157496070-d37a71ff-cf15-4773-9b76-6bbac6d45f14.png) 
 1) WinMetrium Ore, 
@@ -38,7 +31,6 @@ Anyway, this is a mod for Minecraft Java Edition which adds TTS-related stuff su
 23) Irina, 
 24) Sam, 
 25) and more!
->>>>>>> 93357ab403a4fe8226c35ac3b25ec891e5b9a7ca
 
 ---------------------------
 # *HOW TO COMPILE:*
