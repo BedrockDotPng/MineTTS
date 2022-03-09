@@ -12,7 +12,7 @@
       "and you'll be greeted a surprize!"
     ],
     "creativeTab": {
-      "value": "FOOD"
+      "value": "CUSTOM:TtsmodTab"
     },
     "stackSize": 64,
     "nutritionalValue": 12,

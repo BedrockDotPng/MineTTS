@@ -8,7 +8,7 @@
     "name": "Working Compact Disk",
     "rarity": "COMMON",
     "creativeTab": {
-      "value": "MISC"
+      "value": "CUSTOM:TtsmodTab"
     },
     "stackSize": 64,
     "enchantability": 0,

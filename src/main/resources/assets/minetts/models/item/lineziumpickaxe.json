@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "minetts:items/linezium_p_axe"
+  }
+}

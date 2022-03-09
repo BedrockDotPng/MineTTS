@@ -1,0 +1,20 @@
+{
+  "_fv": 18,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "xpReward": 5.0,
+    "cookingTime": 17,
+    "recipeRetstackSize": 1,
+    "group": "",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:PieceLinOre"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:Lineziumingot"
+    },
+    "name": "lineziumingotcraft",
+    "namespace": "minecraft"
+  }
+}

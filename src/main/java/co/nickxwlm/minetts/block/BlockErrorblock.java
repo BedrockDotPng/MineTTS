@@ -41,7 +41,7 @@ public class BlockErrorblock extends ElementsMinettsMod.ModElement {
 			super(Material.ROCK);
 			setUnlocalizedName("errorblock");
 			setSoundType(SoundType.METAL);
-			setHardness(1F);
+			setHardness(1.9000000000000001F);
 			setResistance(10F);
 			setLightLevel(0F);
 			setLightOpacity(255);

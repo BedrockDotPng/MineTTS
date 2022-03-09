@@ -51,8 +51,8 @@ public class BlockWin10Block extends ElementsMinettsMod.ModElement {
 			super(Material.ROCK);
 			setUnlocalizedName("win_10_block");
 			setSoundType(SoundType.STONE);
-			setHarvestLevel("pickaxe", 1);
-			setHardness(1.1500000000000001F);
+			setHarvestLevel("pickaxe", 2);
+			setHardness(1.7F);
 			setResistance(10F);
 			setLightLevel(0F);
 			setLightOpacity(255);

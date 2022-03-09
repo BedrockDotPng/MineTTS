@@ -1,0 +1,42 @@
+{
+  "group": "minetts",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "1": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "2": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "3": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "4": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "5": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "6": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "7": {
+      "item": "minetts:macintoniumpiece"
+    },
+    "8": {
+      "item": "minetts:macintoniumpiece"
+    }
+  },
+  "result": {
+    "item": "minetts:macintoniumblock",
+    "count": 1
+  }
+}

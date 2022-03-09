@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "minetts:blocks/macintoniumpiece",
+    "up": "minetts:blocks/macintoniumpiece",
+    "north": "minetts:blocks/macintoniumpiece",
+    "east": "minetts:blocks/macintoniumpiece",
+    "south": "minetts:blocks/macintoniumpiece",
+    "west": "minetts:blocks/macintoniumpiece",
+    "particle": "minetts:blocks/macintoniumpiece"
+  }
+}

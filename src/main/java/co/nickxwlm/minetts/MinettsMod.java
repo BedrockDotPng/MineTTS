@@ -45,7 +45,7 @@ import java.util.function.Supplier;
 @Mod(modid = MinettsMod.MODID, version = MinettsMod.VERSION)
 public class MinettsMod {
 	public static final String MODID = "minetts";
-	public static final String VERSION = "0.0.21a";
+	public static final String VERSION = "0.0.24a";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("minetts:a");
 	@SidedProxy(clientSide = "co.nickxwlm.minetts.ClientProxyMinettsMod", serverSide = "co.nickxwlm.minetts.ServerProxyMinettsMod")
 	public static IProxyMinettsMod proxy;

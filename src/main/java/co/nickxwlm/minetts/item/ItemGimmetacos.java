@@ -11,9 +11,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.Item;
 import net.minecraft.item.EnumAction;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 
+import co.nickxwlm.minetts.creativetab.TabTtsmodTab;
 import co.nickxwlm.minetts.ElementsMinettsMod;
 
 @ElementsMinettsMod.ModElement.Tag
@@ -39,7 +39,7 @@ public class ItemGimmetacos extends ElementsMinettsMod.ModElement {
 			super(12, 0.7f, false);
 			setUnlocalizedName("gimmetacos");
 			setRegistryName("gimmetacos");
-			setCreativeTab(CreativeTabs.FOOD);
+			setCreativeTab(TabTtsmodTab.tab);
 			setMaxStackSize(64);
 		}
 

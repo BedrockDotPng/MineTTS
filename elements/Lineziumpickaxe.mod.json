@@ -1,0 +1,35 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "linezium_p_axe",
+    "customModelName": "Normal",
+    "name": "Linezium Pickaxe",
+    "specialInfo": [
+      "This pickaxe packs a GODLY-merciful power of an Open-Sourcium Linezium pieces",
+      "and love",
+      "of course!"
+    ],
+    "creativeTab": {
+      "value": "CUSTOM:TtsmodTab"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 4,
+    "efficiency": 8.0,
+    "attackSpeed": 10.9,
+    "enchantability": 32,
+    "damageVsEntity": 8.0,
+    "usageCount": 3071,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:Lineziumingot"
+      }
+    ],
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

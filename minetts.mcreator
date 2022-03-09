@@ -1,7 +1,7 @@
 {
   "id_map": {
-    "ENTITY": 7,
-    "GUI": 4
+    "GUI": 4,
+    "ENTITY": 7
   },
   "mod_elements": [
     {
@@ -383,6 +383,150 @@
           }
         ]
       }
+    },
+    {
+      "name": "LinOre",
+      "type": "block",
+      "sortid": 31,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lin_ore"
+    },
+    {
+      "name": "PieceLinOre",
+      "type": "item",
+      "sortid": 32,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "piece_lin_ore"
+    },
+    {
+      "name": "Lineziumingot",
+      "type": "item",
+      "sortid": 33,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lineziumingot"
+    },
+    {
+      "name": "Lineziumpickaxe",
+      "type": "tool",
+      "sortid": 34,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lineziumpickaxe"
+    },
+    {
+      "name": "Lineziumingotcraft",
+      "type": "recipe",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "lineziumingotcraft"
+    },
+    {
+      "name": "LineziumPickaxecraft",
+      "type": "recipe",
+      "sortid": 36,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "linezium_pickaxecraft"
+    },
+    {
+      "name": "Macintoniumblock",
+      "type": "block",
+      "sortid": 37,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintoniumblock"
+    },
+    {
+      "name": "Macintoniumore",
+      "type": "block",
+      "sortid": 38,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintoniumore"
+    },
+    {
+      "name": "Macintoniumpiece",
+      "type": "item",
+      "sortid": 39,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintoniumpiece"
+    },
+    {
+      "name": "MacintoniumPickaxe",
+      "type": "tool",
+      "sortid": 40,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintonium_pickaxe"
+    },
+    {
+      "name": "Wirecutt",
+      "type": "item",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wirecutt"
+    },
+    {
+      "name": "Wirecutted",
+      "type": "fuel",
+      "sortid": 41,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "wirecutted"
+    },
+    {
+      "name": "Macintoniumpaxecraft",
+      "type": "recipe",
+      "sortid": 42,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintoniumpaxecraft"
+    },
+    {
+      "name": "MacintoniumCombine",
+      "type": "recipe",
+      "sortid": 43,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "macintonium_combine"
+    },
+    {
+      "name": "Pentium",
+      "type": "item",
+      "sortid": 44,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "pentium"
+    },
+    {
+      "name": "Ozu",
+      "type": "item",
+      "sortid": 45,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "ozu"
     }
   ],
   "variable_elements": [],
@@ -470,10 +614,13 @@
   ],
   "language_map": {
     "ru_ru": {
+      "item.macintoniumpiece.name": "Кусок макинтония",
       "itemGroup.tabttsmod_tab": "Вещи из мода TTSmod",
       "item.shortsboots.name": "Shorts Boots",
       "subtitles.irina-death1": "Ирина погибла",
+      "tile.macintoniumblock.name": "Блок макинтония",
       "subtitles.irina-death": "",
+      "item.ozu.name": "Плашка SDRAM-DDR на 64МБ",
       "tile.bsodparts.name": "Блок хромакея",
       "subtitles.nickolay-death1": "Николай погиб",
       "tile.errorblock.name": "Блок ошибки",
@@ -484,29 +631,40 @@
       "subtitles.nickolay-idle1": "Николай говорит",
       "tile.crashiumblock.name": "Блок БСОДия",
       "entity.nickolay.name": "Digalo Nickolai",
+      "tile.lin_ore.name": "Руда линезия",
+      "item.wirecutt.name": "Порванная проводка",
       "subtitles.irina-idle1": "Ирина говорит",
+      "item.lineziumpickaxe.name": "Кирка из линезия",
       "subtitles.sam-damage1": "Сэм получает урон",
-      "item.win_10pickaxe.name": "Кирка из ВинМетрия",
+      "item.win_10pickaxe.name": "Кирка из винметрия",
       "subtitles.sam-idle1": "Сэм говорит",
       "tile.win_10_block.name": "Руда ВинМетрия",
       "item.gimmetacos.name": "Тако",
+      "item.pentium.name": "i586-совместимый ЦПУ",
+      "item.lineziumingot.name": "Руда линезия",
       "subtitles.sam-death1": "Сэм погиб",
       "tile.boilingdiskdrive.name": "Дисковод",
       "item.shortslegs.name": "Шорты",
-      "tile.w_10block.name": "Блок ВинМетрия",
+      "tile.w_10block.name": "Блок винметрия",
       "subtitles.nickolay-death": "Николай погиб",
+      "item.macintonium_pickaxe.name": "Кирка из макинтония",
+      "item.piece_lin_ore.name": "Кусок линезия",
       "subtitles.sam-yum": "Сэм съел тако",
       "item.shortshelmet.name": "Shorts Helmet",
-      "item.win_10_tiley.name": "Кусочек ВинМетрия",
+      "item.win_10_tiley.name": "Кусочек винметрия",
       "entity.sam.name": "Microsoft Sam",
       "item.compact_disk.name": "Компакт-диск",
-      "item.shortsbody.name": "Shorts Body"
+      "item.shortsbody.name": "Shorts Body",
+      "tile.macintoniumore.name": "Руда макинтония"
     },
     "en_us": {
+      "item.macintoniumpiece.name": "Macintonium Piece",
       "itemGroup.tabttsmod_tab": "TTSmod Stuff",
       "item.shortsboots.name": "Shorts Boots",
       "subtitles.irina-death1": "Irina dies",
+      "tile.macintoniumblock.name": "Macintonium Block",
       "subtitles.irina-death": "",
+      "item.ozu.name": "64MB SDRAM-DDR1",
       "tile.bsodparts.name": "Chromakey Block",
       "subtitles.nickolay-death1": "Nickolay dies",
       "tile.errorblock.name": "Error Block",
@@ -517,23 +675,31 @@
       "subtitles.nickolay-idle1": "Nickolay\u0027s speech",
       "tile.crashiumblock.name": "BSODium Block",
       "entity.nickolay.name": "Digalo Nickolai",
+      "tile.lin_ore.name": "Linezium Ore",
+      "item.wirecutt.name": "Broken Wires",
       "subtitles.irina-idle1": "Irina\u0027s speech",
+      "item.lineziumpickaxe.name": "Linezium Pickaxe",
       "subtitles.sam-damage1": "Sam gets hit",
       "item.win_10pickaxe.name": "WinMetrium Pickaxe",
       "subtitles.sam-idle1": "Sam\u0027s speech",
       "tile.win_10_block.name": "WinMetrium Ore",
       "item.gimmetacos.name": "Taco",
+      "item.pentium.name": "i586-compatible CPU",
+      "item.lineziumingot.name": "Linezium Ingot",
       "subtitles.sam-death1": "Sam dies",
       "tile.boilingdiskdrive.name": "Disk Drive",
       "item.shortslegs.name": "Shorts",
       "tile.w_10block.name": "WinMetrium Block",
       "subtitles.nickolay-death": "Nickolay dies",
+      "item.macintonium_pickaxe.name": "Macintonium Pickaxe",
+      "item.piece_lin_ore.name": "Linezium Piece",
       "subtitles.sam-yum": "Sam\u0027s happy with his taco!",
       "item.shortshelmet.name": "Shorts Helmet",
       "item.win_10_tiley.name": "WinMetronium Piece",
       "entity.sam.name": "Microsoft Sam",
       "item.compact_disk.name": "Compact Disk",
-      "item.shortsbody.name": "Shorts Body"
+      "item.shortsbody.name": "Shorts Body",
+      "tile.macintoniumore.name": "Macintonium Ore"
     }
   },
   "foldersRoot": {
@@ -543,9 +709,10 @@
   "workspaceSettings": {
     "modid": "minetts",
     "modName": "TTSmod",
-    "version": "0.0.21a",
+    "version": "0.0.24a",
+    "description": "The mod which adds computer, slash, TTS-related stuff into Minecraft!",
     "author": "WinLinuxMan, Nick Hammerich",
-    "websiteURL": "https://mcreator.net",
+    "websiteURL": "https://vk.com/zappin1002 ! https://vk.com/nick_hammerich",
     "license": "GNU General Public License version 2 (GPLv2)",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,

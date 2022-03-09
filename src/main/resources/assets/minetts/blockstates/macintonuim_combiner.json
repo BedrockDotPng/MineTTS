@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "minetts:macintonuim_combiner"
+    }
+  }
+}

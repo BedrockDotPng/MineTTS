@@ -1,0 +1,31 @@
+{
+  "_fv": 18,
+  "_type": "tool",
+  "definition": {
+    "renderType": 0,
+    "texture": "macintoniumpaxe",
+    "customModelName": "Normal",
+    "name": "Macintonium Pickaxe",
+    "specialInfo": [],
+    "creativeTab": {
+      "value": "CUSTOM:TtsmodTab"
+    },
+    "toolType": "Pickaxe",
+    "harvestLevel": 16,
+    "efficiency": 16.0,
+    "attackSpeed": 3.0,
+    "enchantability": 12,
+    "damageVsEntity": 6.0,
+    "usageCount": 16383,
+    "blocksAffected": [],
+    "hasGlow": false,
+    "repairItems": [
+      {
+        "value": "CUSTOM:Macintoniumpiece"
+      }
+    ],
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

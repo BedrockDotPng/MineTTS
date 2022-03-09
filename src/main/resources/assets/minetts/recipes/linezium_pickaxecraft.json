@@ -1,0 +1,30 @@
+{
+  "group": "minetts",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    " 4 ",
+    " 7 "
+  ],
+  "key": {
+    "0": {
+      "item": "minetts:lineziumingot"
+    },
+    "1": {
+      "item": "minetts:lineziumingot"
+    },
+    "2": {
+      "item": "minetts:lineziumingot"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "7": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "minetts:lineziumpickaxe",
+    "count": 1
+  }
+}
