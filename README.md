@@ -1,32 +1,35 @@
 # TTSmod (original Idea by Nick Hammerich).
 ![TTSmod Banner](https://user-images.githubusercontent.com/74654571/156976681-e2d83671-1bdc-407a-a3c9-a443cd4f62fc.png)
 
-This is a mod for Minecraft Java Edition which adds TTS-related stuff such as:
-1) Mobs 
-- [X] 1.1) Nickolai
-- [X] 1.2) Sam
-- [X] 1.3) Irina.
+*As of now, this mod for Minecraft Java Edition adds TTS-related stuff such as:*
 
-2) Blocks
-- 2.1) OS blocks:
-- - [ ] 2.1.1) Windows 7 Block
-- - [X] 2.1.2) Windows 10 Block
-- - [ ] 2.1.3) Windows 11 Block
-- - [X] 2.1.4) Error Block.
-3) Additional stuff:
-- [X] 3.1) WinMetrium Pickaxe.
-    
- PLANNED STUFF:
-  - [X] 1) A disk drive w/ explosive function upon putting a cake into it.
-  - [X] 2) Projectile CD-ROMs (weapon)
-  - [ ] 3) The TTS dimension
-  - [ ] 4) Tsar-Bomba
-  - [ ] 5) Sasha Mob
-  - [X] 6) BSODium Block
-  - [ ] 7) A computer w/ monitor
-  - [ ] 8) TTS Foes
-  - [X] 9) Sam's Taco-eating feature
-  - [ ] 10) And more! Anyway, wait for more stuff going on!
+![image](https://user-images.githubusercontent.com/74654571/157496070-d37a71ff-cf15-4773-9b76-6bbac6d45f14.png) 
+1) WinMetrium Ore, 
+2) WinMetrium Piece, 
+3) WinMetrium Pickaxe, 
+4) CD-ROM, 
+5) Taco, 
+6) BSODium Block, 
+7) Chromakey Block,
+8) Disk Drive, 
+9) Shorts, 
+10) Error Block, 
+11) Linium Ore, 
+12) Linium Piece, 
+13) Linium Ingot, 
+14) Linium Pickaxe, 
+15) Macintonium Block, 
+16) Macintonium Ore, 
+17) Macintonium Piece,
+18) Macintonium Pickaxe, 
+19) Broken Wires, 
+20) i586-compatible CPU, 
+21) 64MB DDR1-SDRAM, 
+22) Nickolay, 
+23) Irina, 
+24) Sam, 
+25) and more!
+
 ---------------------------
 # *HOW TO COMPILE:*
 1) Download a source file using "Code->Download Zip" buttons.
