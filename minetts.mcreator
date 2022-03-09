@@ -1,7 +1,7 @@
 {
   "id_map": {
-    "ENTITY": 5,
-    "GUI": 3
+    "ENTITY": 7,
+    "GUI": 4
   },
   "mod_elements": [
     {
@@ -310,6 +310,79 @@
       "locked_code": false,
       "ids": {},
       "registry_name": "errorblock"
+    },
+    {
+      "name": "Irina",
+      "type": "mob",
+      "sortid": 27,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 6,
+        "1": 7
+      },
+      "registry_name": "irina"
+    },
+    {
+      "name": "SamTrade",
+      "type": "gui",
+      "sortid": 28,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {
+        "0": 4
+      },
+      "registry_name": "sam_trade"
+    },
+    {
+      "name": "TacoChecker",
+      "type": "procedure",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "taco_checker",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SamClick",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "registry_name": "sam_click",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [],
@@ -342,16 +415,6 @@
       "subtitle": "Nickolay dies"
     },
     {
-      "name": "sam-idle1",
-      "files": [
-        "idle1s",
-        "idle2s",
-        "idle3s"
-      ],
-      "category": "neutral",
-      "subtitle": "Sam\u0027s speech"
-    },
-    {
       "name": "sam-damage1",
       "files": [
         "damage1s",
@@ -362,26 +425,66 @@
       "subtitle": "Sam gets hit"
     },
     {
+      "name": "sam-idle1",
+      "files": [
+        "idle1s",
+        "idle2s",
+        "idle3s"
+      ],
+      "category": "neutral",
+      "subtitle": "Sam\u0027s speech"
+    },
+    {
       "name": "sam-death1",
       "files": [
         "deaths"
       ],
       "category": "neutral",
       "subtitle": "Sam dies"
+    },
+    {
+      "name": "irina-damage1",
+      "files": [
+        "damage1i"
+      ],
+      "category": "neutral",
+      "subtitle": "Irina gets hit"
+    },
+    {
+      "name": "irina-death1",
+      "files": [
+        "deathi"
+      ],
+      "category": "neutral",
+      "subtitle": "Nickolay dies"
+    },
+    {
+      "name": "irina-idle1",
+      "files": [
+        "idle1i",
+        "idle2i"
+      ],
+      "category": "neutral",
+      "subtitle": "Irina\u0027s speech"
     }
   ],
   "language_map": {
     "ru_ru": {
       "itemGroup.tabttsmod_tab": "Вещи из мода TTSmod",
       "item.shortsboots.name": "Shorts Boots",
+      "subtitles.irina-death1": "Ирина погибла",
+      "subtitles.irina-death": "",
       "tile.bsodparts.name": "Блок хромакея",
       "subtitles.nickolay-death1": "Николай погиб",
+      "tile.errorblock.name": "Блок ошибки",
       "subtitles.nickolay-damage1": "Николай получает урон",
-      "tile.errorblock.name": "Errorblock",
+      "entity.irina.name": "Майкрософт Ирина",
       "item.cdrs.name": "Рабочая болванка",
+      "subtitles.irina-damage1": "Ирина получает урон",
       "subtitles.nickolay-idle1": "Николай говорит",
       "tile.crashiumblock.name": "Блок БСОДия",
       "entity.nickolay.name": "Digalo Nickolai",
+      "subtitles.irina-idle1": "Ирина говорит",
       "subtitles.sam-damage1": "Сэм получает урон",
       "item.win_10pickaxe.name": "Кирка из ВинМетрия",
       "subtitles.sam-idle1": "Сэм говорит",
@@ -389,7 +492,7 @@
       "item.gimmetacos.name": "Тако",
       "subtitles.sam-death1": "Сэм погиб",
       "tile.boilingdiskdrive.name": "Дисковод",
-      "item.shortslegs.name": "Shorts",
+      "item.shortslegs.name": "Шорты",
       "tile.w_10block.name": "Блок ВинМетрия",
       "subtitles.nickolay-death": "Николай погиб",
       "subtitles.sam-yum": "Сэм съел тако",
@@ -402,14 +505,19 @@
     "en_us": {
       "itemGroup.tabttsmod_tab": "TTSmod Stuff",
       "item.shortsboots.name": "Shorts Boots",
+      "subtitles.irina-death1": "Irina dies",
+      "subtitles.irina-death": "",
       "tile.bsodparts.name": "Chromakey Block",
       "subtitles.nickolay-death1": "Nickolay dies",
-      "subtitles.nickolay-damage1": "Nickolay gets hit",
       "tile.errorblock.name": "Error Block",
+      "subtitles.nickolay-damage1": "Nickolay gets hit",
+      "entity.irina.name": "Microsoft Irina Desktop",
       "item.cdrs.name": "Working Compact Disk",
+      "subtitles.irina-damage1": "Irina gets hit",
       "subtitles.nickolay-idle1": "Nickolay\u0027s speech",
       "tile.crashiumblock.name": "BSODium Block",
       "entity.nickolay.name": "Digalo Nickolai",
+      "subtitles.irina-idle1": "Irina\u0027s speech",
       "subtitles.sam-damage1": "Sam gets hit",
       "item.win_10pickaxe.name": "WinMetrium Pickaxe",
       "subtitles.sam-idle1": "Sam\u0027s speech",
@@ -435,7 +543,7 @@
   "workspaceSettings": {
     "modid": "minetts",
     "modName": "TTSmod",
-    "version": "0.0.19a",
+    "version": "0.0.21a",
     "author": "WinLinuxMan, Nick Hammerich",
     "websiteURL": "https://mcreator.net",
     "license": "GNU General Public License version 2 (GPLv2)",

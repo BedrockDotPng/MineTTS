@@ -39,7 +39,7 @@ import java.util.Iterator;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-import co.nickxwlm.minetts.procedure.ProcedureEraseTaco;
+import co.nickxwlm.minetts.procedure.ProcedureSamClick;
 import co.nickxwlm.minetts.item.ItemWin10Tiley;
 import co.nickxwlm.minetts.item.ItemGimmetacos;
 import co.nickxwlm.minetts.ElementsMinettsMod;
@@ -61,7 +61,7 @@ public class EntitySam extends ElementsMinettsMod.ModElement {
 	@Override
 	public void init(FMLInitializationEvent event) {
 		Biome[] spawnBiomes = allbiomes(Biome.REGISTRY);
-		EntityRegistry.addSpawn(EntityCustom.class, 1, 1, 3, EnumCreatureType.CREATURE, spawnBiomes);
+		EntityRegistry.addSpawn(EntityCustom.class, 1, 1, 3, EnumCreatureType.AMBIENT, spawnBiomes);
 	}
 
 	private Biome[] allbiomes(net.minecraft.util.registry.RegistryNamespaced<ResourceLocation, Biome> in) {
@@ -143,7 +143,11 @@ public class EntitySam extends ElementsMinettsMod.ModElement {
 			{
 				Map<String, Object> $_dependencies = new HashMap<>();
 				$_dependencies.put("entity", entity);
-				ProcedureEraseTaco.executeProcedure($_dependencies);
+				$_dependencies.put("x", x);
+				$_dependencies.put("y", y);
+				$_dependencies.put("z", z);
+				$_dependencies.put("world", world);
+				ProcedureSamClick.executeProcedure($_dependencies);
 			}
 			return true;
 		}

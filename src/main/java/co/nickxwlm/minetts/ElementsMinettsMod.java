@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Retention;
 
+import co.nickxwlm.minetts.gui.GuiSamTrade;
 import co.nickxwlm.minetts.gui.GuiEasterEgg;
 import co.nickxwlm.minetts.gui.GuiDiskDriveslot;
 
@@ -63,9 +64,14 @@ public class ElementsMinettsMod implements IFuelHandler, IWorldGenerator {
 				new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "nickolay-damage1")));
 		sounds.put(new ResourceLocation("minetts", "nickolay-death1"),
 				new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "nickolay-death1")));
-		sounds.put(new ResourceLocation("minetts", "sam-idle1"), new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "sam-idle1")));
 		sounds.put(new ResourceLocation("minetts", "sam-damage1"), new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "sam-damage1")));
+		sounds.put(new ResourceLocation("minetts", "sam-idle1"), new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "sam-idle1")));
 		sounds.put(new ResourceLocation("minetts", "sam-death1"), new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "sam-death1")));
+		sounds.put(new ResourceLocation("minetts", "irina-damage1"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "irina-damage1")));
+		sounds.put(new ResourceLocation("minetts", "irina-death1"),
+				new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "irina-death1")));
+		sounds.put(new ResourceLocation("minetts", "irina-idle1"), new net.minecraft.util.SoundEvent(new ResourceLocation("minetts", "irina-idle1")));
 	}
 
 	public void preInit(FMLPreInitializationEvent event) {
@@ -138,6 +144,8 @@ public class ElementsMinettsMod implements IFuelHandler, IWorldGenerator {
 				return new GuiEasterEgg.GuiContainerMod(world, x, y, z, player);
 			if (id == GuiDiskDriveslot.GUIID)
 				return new GuiDiskDriveslot.GuiContainerMod(world, x, y, z, player);
+			if (id == GuiSamTrade.GUIID)
+				return new GuiSamTrade.GuiContainerMod(world, x, y, z, player);
 			return null;
 		}
 
@@ -147,6 +155,8 @@ public class ElementsMinettsMod implements IFuelHandler, IWorldGenerator {
 				return new GuiEasterEgg.GuiWindow(world, x, y, z, player);
 			if (id == GuiDiskDriveslot.GUIID)
 				return new GuiDiskDriveslot.GuiWindow(world, x, y, z, player);
+			if (id == GuiSamTrade.GUIID)
+				return new GuiSamTrade.GuiWindow(world, x, y, z, player);
 			return null;
 		}
 	}

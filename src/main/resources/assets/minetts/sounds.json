@@ -41,24 +41,6 @@
       }
     ]
   },
-  "sam-idle1": {
-    "category": "neutral",
-    "subtitle": "subtitles.sam-idle1",
-    "sounds": [
-      {
-        "name": "minetts:idle1s",
-        "stream": false
-      },
-      {
-        "name": "minetts:idle2s",
-        "stream": false
-      },
-      {
-        "name": "minetts:idle3s",
-        "stream": false
-      }
-    ]
-  },
   "sam-damage1": {
     "category": "neutral",
     "subtitle": "subtitles.sam-damage1",
@@ -77,12 +59,64 @@
       }
     ]
   },
+  "sam-idle1": {
+    "category": "neutral",
+    "subtitle": "subtitles.sam-idle1",
+    "sounds": [
+      {
+        "name": "minetts:idle1s",
+        "stream": false
+      },
+      {
+        "name": "minetts:idle2s",
+        "stream": false
+      },
+      {
+        "name": "minetts:idle3s",
+        "stream": false
+      }
+    ]
+  },
   "sam-death1": {
     "category": "neutral",
     "subtitle": "subtitles.sam-death1",
     "sounds": [
       {
         "name": "minetts:deaths",
+        "stream": false
+      }
+    ]
+  },
+  "irina-damage1": {
+    "category": "neutral",
+    "subtitle": "subtitles.irina-damage1",
+    "sounds": [
+      {
+        "name": "minetts:damage1i",
+        "stream": false
+      }
+    ]
+  },
+  "irina-death1": {
+    "category": "neutral",
+    "subtitle": "subtitles.irina-death1",
+    "sounds": [
+      {
+        "name": "minetts:deathi",
+        "stream": false
+      }
+    ]
+  },
+  "irina-idle1": {
+    "category": "neutral",
+    "subtitle": "subtitles.irina-idle1",
+    "sounds": [
+      {
+        "name": "minetts:idle1i",
+        "stream": false
+      },
+      {
+        "name": "minetts:idle2i",
         "stream": false
       }
     ]
